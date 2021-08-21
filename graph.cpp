@@ -3,7 +3,7 @@
 void Graph::addVertex(int node)
 {
     int vertex;
-    vertex = nodeExists(node);
+    vertex = vertexExists(node);
     if (vertex != 1)
     {
         nodelist.push_back(node);
@@ -14,7 +14,7 @@ void Graph::addVertex(int node)
     }
 }
 
-bool Graph::nodeExists(int node)
+bool Graph::vertexExists(int node)
 {
     for (int i = 0; i < nodelist.size(); i++)
     {
@@ -42,8 +42,8 @@ void Graph::addEdge(int node1, int node2)
 {
     int compare1, compare2, compare3;
     compare1 = edgeExists(node1, node2);
-    compare2 = nodeExists(node1);
-    compare3 = nodeExists(node2);
+    compare2 = vertexExists(node1);
+    compare3 = vertexExists(node2);
     if (compare1 != 1 && compare2 == 1 && compare3 == 1)
     {
         edgelist1.push_back(node1);
@@ -66,7 +66,7 @@ void Graph::addUndirectedEdge(int node1, int node2)
     addEdge(node2, node1);
 }
 
-void Graph::displayNodes()
+void Graph::displayVertices()
 {
     for (std::vector<int>::const_iterator i = nodelist.begin(); i < (nodelist.end()); i++)
     {
@@ -97,7 +97,7 @@ int Graph::inDegree(int node)
     int count = 0;
     for (int i = 0; i < nodelist.size(); i++)
     {
-        if (nodeExists(node))
+        if (vertexExists(node))
         {
             if (edgeExists(node, edgelist1[i]) || edgeExists(edgelist1[i], node))
             {
@@ -123,7 +123,7 @@ void Graph::BreadthFirstTraversal(int node)
 {
 
     int p;
-    p = nodeExists(node);
+    p = vertexExists(node);
     std::vector<int> friendlist;
     if (p == 1)
     {

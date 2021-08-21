@@ -12,8 +12,8 @@ private:
 public:
    
     void addVertex(int node);
-    bool nodeExists(int node);
-    void displayNodes();
+    bool vertexExists(int node);
+    void displayVertices();
     void addEdge(int node1, int node2);
     void addUndirectedEdge(int node1, int node2);
     bool edgeExists(int node1 , int node2);

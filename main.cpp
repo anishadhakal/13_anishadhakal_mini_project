@@ -26,7 +26,7 @@ int main()
     }
 
     std::cout << "Displaying all vertices:" << std::endl;
-    g.displayNodes();
+    g.displayVertices();
     std::cout << "Displaying all edges:" << std::endl;
     g.displayEdges();
     g.numNodes();
@@ -62,7 +62,7 @@ start1:
     {
         if (number1 == 1)
         {
-            std::cout << "Enter the node whose friend you want to find:" << std::endl;
+            std::cout << "Enter the vertex whose friend you want to find:" << std::endl;
             std::cin >> a;
             g.BreadthFirstTraversal(a);
             goto start1;
